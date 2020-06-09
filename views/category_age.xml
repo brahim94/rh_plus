@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Data records go here -->
+    <record id="category_age_view_form" model="ir.ui.view">
+        <field name="name">Category Age Form</field>
+        <field name="model">category.age</field>
+        <field name="arch" type="xml">
+        <form>
+             <sheet>
+                    <group col="2">
+                        <group string="Catégorie d'age">
+                            <field name="date_birth"/>
+                            <field name="age"/>
+                            <field name="ahmed"/>
+                            <field name="category_id"/>
+                            <field name="etat"/>
+                        </group>
+                    </group>
+            </sheet>
+         </form>
+        </field>
+    </record>
+
+    <record id="category_age_view_tree" model="ir.ui.view">
+        <field name="name">Category Age Tree</field>
+        <field name="model">category.age</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date_birth"/>
+                <field name="age"/>
+                <field name="category_id"/>
+                <field name="etat"/>
+                <field name="ahmed"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="category_age_retired_search" model="ir.ui.view">
+        <field name="name">category.age.search</field>
+        <field name="model">category.age</field>
+        <field name="arch" type="xml">
+            <search string="Search retired">
+                <filter string="Retraité" name="retired" domain = "['|',('etat','!=','type3'),('age','in',[58,61])]"/>
+                <filter string="Retra" name="retir" domain="[('age', '=', '58')]"/>
+            </search>
+        </field>
+    </record>
+
+    
+    <record model="ir.actions.act_window" id="category_age_action">
+    <field name="name">Catégorie d'age</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">category.age</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+            <p class="oe_view_nocontent_smiling_face"> créer votre première catégorie d'age</p>
+            </field>
+        </record>
+        
+
+     <menuitem action="category_age_action"
+      id="category_age_menu" 
+      name="Catégorie d'age" 
+      parent="hr.menu_human_resources_configuration"
+      sequence="2"/>
+
+
+ </odoo>
