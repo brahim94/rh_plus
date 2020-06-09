@@ -12,7 +12,6 @@
                         <group string="Catégorie d'age">
                             <field name="date_birth"/>
                             <field name="age"/>
-                            <field name="ahmed"/>
                             <field name="category_id"/>
                             <field name="etat"/>
                         </group>
@@ -31,7 +30,6 @@
                 <field name="age"/>
                 <field name="category_id"/>
                 <field name="etat"/>
-                <field name="ahmed"/>
             </tree>
         </field>
     </record>

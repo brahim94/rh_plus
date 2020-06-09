@@ -14,14 +14,13 @@ class categoryage(models.Model):
     _name = "category.age"
     #_rec_name = "age"
 
-    name_cate = fields.Char(string="nom category")
+    #name_cate = fields.Char(string="nom category")
     date_birth = fields.Date(string="Date de naissance")
     #age = fields.Char(compute="_cal_age", string="Age")
     age = fields.Integer(string='Age', compute="_cal_age", search='_value_search', stored=True)
     category_id = fields.Many2one('categ.age', "Categorie d'age")
     name_test = fields.Char(related='category_id.name')
     etat = fields.Selection([ ('type1', 'Stagiaire'),('type2', 'Titulaire'),('type3', 'Retraité '),('type4', 'Démissionné'),('type5', 'Décédé'),],'Etat', default='type2')
-    ahmed = fields.Integer(string="money")
     #@api.onchange('age')
     #def onchange_age(self):
         #self.category_id.name = 'type2' if self.age < 20 else 'type3'
