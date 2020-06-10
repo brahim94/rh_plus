@@ -28,6 +28,7 @@
         'views/category_age.xml',
         'views/views.xml',
         'views/templates.xml',
+        'report/report_test.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

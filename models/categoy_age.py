@@ -21,6 +21,7 @@ class categoryage(models.Model):
     category_id = fields.Many2one('categ.age', "Categorie d'age")
     name_test = fields.Char(related='category_id.name')
     etat = fields.Selection([ ('type1', 'Stagiaire'),('type2', 'Titulaire'),('type3', 'Retraité '),('type4', 'Démissionné'),('type5', 'Décédé'),],'Etat', default='type2')
+    rib_num = fields.Char(string="Numero de compte RIB")
     #@api.onchange('age')
     #def onchange_age(self):
         #self.category_id.name = 'type2' if self.age < 20 else 'type3'

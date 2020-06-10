@@ -1,0 +1,133 @@
+<odoo>
+
+    <report
+        id="report_test"
+        model="category.age"
+        string="Test Report"
+        name="rh_plus.report_test_view"
+        file="rh_plus.report_test"
+        report_type="qweb-pdf" />
+
+    <template id="report_test_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+
+                  <div style="position:absolute;left:35.28px;top:94.02px" class="cls_003"><span class="cls_003">Ref :01-04-2020</span></div>
+                <table style="position:absolute;left:223.25px;top:149.34px">
+                <tr>
+                <td style="border: 1px solid black" width="100%" cellspacing="1" cellpadding="1">
+                <br>إشهـاد بالتوصـل</br>
+                <br>ATTESTATION DE DECHARGE</br>
+                </td></tr>
+                </table>
+                <div style="position:absolute;left:471.94px;top:162.42px" class="cls_009"><span class="cls_009">../../.. </span><span class="cls_008">:الرباط في</span></div>
+               <table style="position:absolute;top:270.42px;width:100%">
+                    <tr class="text-right">
+                        <th style="border: 1px solid black"> :معطيات حول السيارة </th> 
+                        <th style="border: 1px solid black">:معطيات حول السائق </th>
+                    </tr>
+                    <tr class="text-right">
+                        <td>:نوع السيارة<br> Type de voiture </br></td>
+                        <td style="border-left: 1px solid black">:الاسم العائلي والشخصي<br> Nom et Prénom </br></td>
+                    </tr>
+                    <tr class="text-right">
+                        <td >:رقم صفيحة السيارة<br> N° d’immatriculation</br></td>
+                        <td style="border-left: 1px solid black">:الإطار أو الصفة<br> Grade ou fonction</br></td>
+                    </tr>
+                    <tr class="text-right">
+                        <td>:الرقم التسلسلي للوثيقة<br> N° de série du document</br></td>
+                        <td style="border-left: 1px solid black">:رقم بطاقة التعريف الوطنية <br>N° de CINE</br></td>
+                    </tr>
+                     <tr class="text-right">
+                        <td >:المبلغ الإجمالي المسلم<br> Montant global délivrer </br></td>
+                        <td style="border-left: 1px solid black">:رقم التأجير<br>N° PPR</br></td>
+                    </tr>
+                     <tr class="text-right">
+                        <td style="border-bottom: none">:الغاية<br> Motif</br></td>
+                        <td style="border-left: 1px solid black;border-bottom: none">:مقر التعيين<br>Lieu d’affectation</br></td>
+                    </tr>
+                    
+                    </table>
+
+                    <table style="border: 1px solid black;position:absolute;top:700.42px;width:100%">
+                    <tr style="border: 1px solid black" class="text-right" >
+                        <th colspan="3" style="border: 1px solid black;width:100%"> :معطيات حول المهمة </th> 
+                    </tr>
+                    <tr class="text-right">
+                        <td colspan="2" style="border: 1px solid black;width:40%;text-align: center">الرباط -مراكش-أكادير</td>
+                        <td style="border: 1px solid black">:الذهاب<br> Aller </br></td>
+                    </tr>
+                    <tr class="text-right">
+                        <td colspan="2" style="border: 1px solid black;width:40%;text-align: center">أكادير-الرباط</td>
+                        <td style="border: 1px solid black">:الإياب<br> Retour </br></td>
+                    </tr>
+                    <tr class="text-right">
+                        <td style="border: 1px solid black;text-align: right">: الى<br> A </br></td>
+                        <td style="border: 1px solid black">: من <br> De </br></td>
+                        <td style="border: 1px solid black">: التاريخ<br> Date </br></td>
+                    </tr>
+                    <tr class="text-right">
+                        <td colspan="3" style="border: 1px solid black;width:33,33%;text-align: right">: الموضوع<br>Objet</br></td>
+                    </tr>
+                    <tr class="text-right">
+                        <td colspan="2" style="border: 1px solid black;width:40%;text-align: center">السيد</td>
+                        <td style="border: 1px solid black">:المرافقون<br>Accompagnants</br></td>
+                    </tr>
+                    </table>
+                    <table style="position:absolute;border: 1px solid black;top:1300.42px;width:40%">
+                    <tr>
+							<th> 
+							<p>Téléphone:</p>
+								<td style="width:40%;border-left: 1px solid;border-bottom: none">توقيع المتسلم</td>	
+							</th>
+                    </tr>
+					</table>
+                    
+                    <div style="position:absolute;left:500.82px;top:1300.42px" class="cls_009"><span class="cls_009">حظيرة السيارات<br>Parc Auto</br></span></div>
+                    <div style="position:absolute;left:500.82px;top:1350.42px" class="cls_009"><span class="cls_009">مرفق: تفصيل حول الشيات المسلمة<br>Annexe : Détail des Vignettes livrées</br></span></div> 
+                    
+                    <table style="position:absolute;top:1450.42px;width:100%">
+                    <tr class="text-right">
+                        <th >XXXXXXXXX</th> 
+                        <th>XXXXXXXXX</th>
+                        <th >XXXXXXXXX</th> 
+                        <th >XXXXXXXXX</th>
+                        <th >XXXXXXXXX</th> 
+                        <th >XXXXXXXXX</th>
+                        <th >XXXXXXXXX</th> 
+                        <th >XXXXXXXXX</th>
+                    </tr>
+                    <tr class="text-right">
+                        <td style="border-bottom: none">YYY</td>
+                        <td style="border-bottom: none">YYY</td>
+                        <td style="border-bottom: none">YYY</td>
+                        <td style="border-bottom: none">YYY</td>
+                        <td style="border-bottom: none">YYY</td>
+                        <td style="border-bottom: none">YYY</td>
+                        <td style="border-bottom: none">YYY</td>
+                    </tr> 
+                   </table>
+                   <table style="position:absolute;top:1550.42px;border-style:none;width:100%">
+                    <tr>
+							<th> 
+								<td style="border-bottom: none">Totale en Dirham</td><td style="border-bottom: none"></td><td style="text-align: right;border-bottom: none">المجموع بالدرهم</td>	
+							</th>
+                    </tr>
+                    </table>
+                     <table style="position:absolute;top:1600.42px;width:100%;height=100%">
+                    <tr>
+                    <td style="border-style:dashed;border-width:5px;text-align: center" width="100%" cellspacing="1" cellpadding="1">
+                    <br>صور مرئية للشايات المسلمة</br>
+                    <br>Images visuelles des vignettes livrées</br>
+                    </td></tr>
+                    </table>
+
+                </t>
+            </t>
+
+
+        </t>
+    </template>
+
+</odoo>
