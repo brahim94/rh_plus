@@ -64,7 +64,7 @@
                         <td colspan="2" style="border: 1px solid black;text-align: center;padding:0px; margin:0px">أكادير-الرباط</td>
                         <td style="border: 1px solid black;padding:0px; margin:0px">:الإياب<br> Retour </br></td>
                     </tr>
-                    <tr>
+                    <tr style="padding:0px; margin:0px">
                         <td style="border: 1px solid black;padding:0px; margin:0px"><p  class="text-right">: الى</p><br class="text-left"> A </br></td>
                         <td style="border: 1px solid black;padding:0px; margin:0px"><p  class="text-right">: من</p><br class="text-left"> De </br></td>
                         <td class="text-right" style="border: 1px solid black;padding:0px; margin:0px">: التاريخ<br> Date </br></td>
@@ -110,14 +110,15 @@
 							</th>
                     </tr>
                     </table>
-                     <table style="position:absolute;top:1270.42px;width:100%;height=100%">
+                     <!--table style="position:absolute;top:1270.42px;width:100%;height=100%">
                     <tr>
                     <td style="border-style:dashed;border-width:5px;text-align: center;padding:50px;margin:0px" width="100%" cellspacing="1" cellpadding="1">
                     <br>صور مرئية للشايات المسلمة</br>
                     <br>Images visuelles des vignettes livrées</br>
                     </td></tr>
-                    </table>
-
+                    </table-->
+                    <div style="position:absolute;top:1270.42px;border-style:dashed;border-width:5px;text-align: center;vertical-align: top;width:97%;line-height: 200px;height: 500px;" class="cls_009">
+                    <h5> <br>صور مرئية للشايات المسلمة</br><br> Images visuelles des vignettes livrées </br></h5></div>
                 </t>
             </t>
 
