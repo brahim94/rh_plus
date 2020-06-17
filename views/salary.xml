@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id='salary_view_form' model='ir.ui.view'>
+            <field name="name">hr.salary.form</field>
+            <field name="model">hr.salary</field>
+            <field name="arch" type="xml">
+               <form>
+                <sheet>
+                       <group col="2">
+                            <group>
+                                <field name="month"/>
+                                <field name="year"/>
+                                 <field name="employee_id"/>
+                            </group>
+                            <group>
+                                <field name="registration"/>
+                                <field name="date_salary"/>
+                                <field name="salary_amount"/>
+                                 <field name="file1"/>
+                            </group>
+                        </group>
+                </sheet>
+                </form>
+            </field>
+</record>
+
+<record id="salary_list_view_tree" model="ir.ui.view">
+        <field name="name">salary.list.tree</field>
+        <field name="model">hr.salary</field>
+        <field name="arch" type="xml">
+            <tree>
+            <field name="employee_id"/>
+            <field name="date_salary"/>
+            <field name="registration"/>
+            <field name="salary_amount"/>
+            <field name="month"/>
+            <field name="year"/>
+            </tree>
+        </field>
+    </record>
+
+<record id="action_hr_salary" model="ir.actions.act_window">
+    <field name="name">Salaire</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.salary</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+  <menuitem
+            id="menu_human_resources_configuration_salary"
+            name="Salaire"
+            action="action_hr_salary"
+            parent="hr.menu_hr_employee_payroll"
+            sequence="199"
+            groups="base.group_user"/>
+</odoo>

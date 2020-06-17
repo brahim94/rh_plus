@@ -9,6 +9,7 @@ class categoryageinhe(models.Model):
     _inherit = "hr.employee"
 
     profile = fields.Char(string='Profile')
+    salary_id = fields.Many2one('hr.salary', string="Salaire")
 
 class categoryage(models.Model):
     _name = "category.age"
