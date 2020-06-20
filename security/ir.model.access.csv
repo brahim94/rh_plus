@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_category_age,access_category_age,model_category_age,base.group_user,1,1,1,1
 access_categ_age,access_categ_age,model_categ_age,base.group_user,1,1,1,1
 access_hr_salary,access_hr_salary,model_hr_salary,base.group_user,1,1,1,1
+access_certificat_order,access_certificat_order,model_certificat_order,base.group_user,1,1,1,1

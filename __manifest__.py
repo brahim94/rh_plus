@@ -20,13 +20,22 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr'],
+    'depends': ['base', 'hr', 'mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/category_age.xml',
+        'report/job_report.xml',
+        'report/salary_report.xml',
+        'report/domiciliation_report.xml',
+        'report/leave_report.xml',
+        'report/work_report.xml',
+        'report/notify_report.xml',
+        'data/mail_template.xml',
+        'data/sequence.xml',
         'views/salary.xml',
+        'views/certifications.xml',
         'views/views.xml',
         'views/templates.xml',
     ],

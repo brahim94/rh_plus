@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id='certification_view_form' model='ir.ui.view'>
+            <field name="name">hr.certification.form</field>
+            <field name="model">certificat.order</field>
+            <field name="arch" type="xml">
+               <form>
+                <header>
+                    <button name="action_validate" type="object" string="Valider" class="oe_highlight" attrs="{'invisible':[('type_attestation','!=','job')]}" state="brouillon"/>
+                    <button name="print_job" string="Imprimer" type="object" class="oe_highlight" groups="hr.group_hr_user" attrs="{'invisible': ['|',('type_attestation','!=','job'),('state','!=','valide')]}"/>
+                    <button name="send_job_certifica" string="Envoyer" type="object" class="oe_highlight" attrs="{'invisible': ['|',('type_attestation','!=','job'),('state','!=','valide')]}"/>
+                    <button name="action_validate_salary" type="object" string="Valider" class="oe_highlight"  attrs="{'invisible':[('type_attestation','!=','salary')]}" state="brouillon"/>
+                    <button name="print_salary" string="Imprimer" type="object" class="oe_highlight" groups="hr.group_hr_user" attrs="{'invisible': ['|',('type_attestation','!=','salary'),('state','!=','valide')]}"/>
+                    <button name="send_salary_certifica" string="Envoyer" type="object" class="oe_highlight" attrs="{'invisible': ['|',('type_attestation','!=','salary'),('state','!=','valide')]}"/>
+                    <button name="action_validate_domiciliation" type="object" string="Valider" class="oe_highlight" attrs="{'invisible':[('type_attestation','!=','domiciliation')]}" state="brouillon"/>
+                    <button name="print_domiciliation" string="Imprimer" type="object" state="valide" class="oe_highlight" groups="hr.group_hr_user" attrs="{'invisible': ['|',('type_attestation','!=','domiciliation'),('state','!=','valide')]}"/>
+                    <button name="send_domiciliation_certifica" string="Envoyer" type="object" state="valide" class="oe_highlight" attrs="{'invisible': ['|',('type_attestation','!=','domiciliation'),('state','!=','valide')]}"/>
+                    <button name="action_validate_leave" type="object" string="Valider" class="oe_highlight" attrs="{'invisible':[('type_attestation','!=','leave')]}" state="brouillon"/>
+                    <button name="print_leave" string="Imprimer" type="object" state="valide" class="oe_highlight" groups="hr.group_hr_user" attrs="{'invisible': ['|',('type_attestation','!=','leave'),('state','!=','valide')]}"/>
+                    <button name="send_leave_certifica" string="Envoyer" type="object" state="valide" class="oe_highlight" attrs="{'invisible': ['|',('type_attestation','!=','leave'),('state','!=','valide')]}"/>
+                    <button name="action_validate_work" type="object" string="Valider" class="oe_highlight" attrs="{'invisible':[('type_attestation','!=','work')]}" state="brouillon"/>
+                    <button name="print_work" string="Imprimer" type="object" state="valide" class="oe_highlight" groups="hr.group_hr_user" attrs="{'invisible': ['|',('type_attestation','!=','work'),('state','!=','valide')]}"/>
+                    <button name="send_work_certifica" string="Envoyer" type="object" state="valide" class="oe_highlight" attrs="{'invisible': ['|',('type_attestation','!=','work'),('state','!=','valide')]}"/>
+                    <button name="action_validate_notify" type="object" string="Valider" class="oe_highlight" attrs="{'invisible':[('type_attestation','!=','notify')]}" state="brouillon"/>
+                    <button name="print_notify" string="Imprimer" type="object" state="valide" class="oe_highlight" groups="hr.group_hr_user" attrs="{'invisible': ['|',('type_attestation','!=','notify'),('state','!=','valide')]}"/>
+                    <button name="send_notify_certifica" string="Envoyer" type="object" state="valide" class="oe_highlight" attrs="{'invisible': ['|',('type_attestation','!=','notify'),('state','!=','valide')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class='oe_title'>
+                        <h1>
+                            <field name="name" readonly="1"/>
+                            <!--field name="name_sal" readonly="1"  attrs="{'invisible': [('type_attestation','!=','salary')]}"/-->
+                        </h1>
+                    </div>
+                    <group col="2">
+                        <group>
+                            <field name="type_attestation"/>
+                            <field name="company_id"/>
+                            <field name="employee_id"/>
+                            <field name="cnss_number" attrs="{'invisible': [('type_attestation','!=','job')]}"/>
+                            <field name="date_hire"/>
+                        </group>
+                        <group>
+                            <field name="email_id"/>
+                            <field name="fiche_poste"/>
+                            <field name="manager"/>
+                            <field name="contrat"/>
+                            <field name="demand_date"/>
+                            <field name="send_date" attrs="{'invisible': [('type_attestation','!=','job')]}"/> 
+                            <field name="amount_money" attrs="{'invisible': [('type_attestation','!=','salary')]}"/>
+                            <field name="name_bank" attrs="{'invisible': [('type_attestation','not in',['notify','domiciliation'])]}"/>
+                            <field name="name_agency" attrs="{'invisible': [('type_attestation','not in',['notify','domiciliation'])]}"/>
+                            <field name="rib_number" attrs="{'invisible': [('type_attestation','!=','domiciliation')]}"/>
+                            <field name="months_number" attrs="{'invisible': [('type_attestation','!=','domiciliation')]}"/>
+                            <field name="leave_date_start" attrs="{'invisible': [('type_attestation','!=','leave')]}"/>
+                            <field name="leave_date_end" attrs="{'invisible': [('type_attestation','!=','leave')]}"/>
+                            <field name="date_leave" attrs="{'invisible': [('type_attestation','!=','work')]}"/>
+                            <field name="cin_number" attrs="{'invisible': [('type_attestation','!=','notify')]}"/>
+                        </group>
+                    </group>
+                </sheet>
+                 <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="activity_ids" widget="mail_thread"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+        </record>
+
+<record id="certification_list_view_tree" model="ir.ui.view">
+        <field name="name">certification.list.tree</field>
+        <field name="model">certificat.order</field>
+        <field name="arch" type="xml">
+            <tree>
+            <field name="type_attestation"/>
+            <field name="employee_id"/>
+            <field name="demand_date"/>
+            </tree>
+        </field>
+    </record>
+
+<record  id="view_certificat_order_graph" model="ir.ui.view">
+    <field name="name">certificat.order.graph</field>
+    <field name="model">certificat.order</field>
+    <field name="arch" type="xml">
+        <graph string="Attestations graph">
+            <field name="demand_date"/>
+            <field name="type_attestation"/>
+            <field name="employee_id"/>
+        </graph>
+    </field>
+</record>
+
+<record  id="view_certificat_order_pivot" model="ir.ui.view">
+        <field name="name">certificat.order.pivot</field>
+        <field name="model">certificat.order</field>
+        <field name="arch" type="xml">
+            <pivot string="Attestations Pivot">
+                <field name="demand_date" type="row"/>
+                <field name="type_attestation"/>
+                <field name="employee_id"/>
+            </pivot>
+        </field>
+</record>
+
+<record id="action_hr_certification" model="ir.actions.act_window">
+    <field name="name">Attestation</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">certificat.order</field>
+    <field name="view_mode">tree,form,graph,pivot</field>
+</record>
+
+<record id="action_hr_certification_still" model="ir.actions.act_window">
+    <field name="name">Attestation En Cours</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">certificat.order</field>
+    <field name="view_mode">form</field>
+    <field name="domain">[("state","=","Nouveau")]</field>
+</record>
+
+
+<menuitem name="Attestation" 
+    id="menu_root" 
+    sequence="115" 
+    groups="base.group_user" 
+    web_icon="rh_plus,static/description/icon.png"/>
+
+    <menuitem name="Demande Attestation"  
+    parent="menu_root" 
+    id="attetstation_list_menu" 
+    sequence="100" 
+    action="action_hr_certification"
+    groups ="base.group_user"/>
+
+    <menuitem name="Demande en cours"  
+    parent="menu_root" 
+    id="attetstation_list_menu_still" 
+    sequence="102" 
+    action="action_hr_certification_still"
+    groups ="hr.group_hr_user"/>
+
+</odoo>
